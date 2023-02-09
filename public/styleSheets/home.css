@@ -1,0 +1,44 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dhpihshcf/image/upload/v1675843352/YelpCamp/home_xzmgb3.jpg");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+.cover-container {
+  max-width: 60vw;
+}
+
+.nav-link {
+  padding: 0.25rem 0;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1rem;
+  border-bottom: 0.25rem solid rgba(255, 255, 255, 0);
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+
+  border-bottom: 0.25rem solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary {
+  color: #333;
+  text-shadow: none;
+  transition: 200ms;
+}
+
+.btn-secondary:hover {
+  transform: translate(0rem, -0.5rem);
+  color: #333;
+  text-shadow: none;
+  box-shadow: 0 0.5rem 3px rgba(128, 176, 248, 0.233);
+}
+
+.nav-link.active {
+  color: white;
+  border-bottom: 0.25rem solid rgba(255, 255, 255, 0.5);
+}

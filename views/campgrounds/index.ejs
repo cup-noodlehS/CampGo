@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+<div id="cluster-map" class="mb-3"></div>
+<h1>All Campgrounds</h1>
+<div>
+  <a href="/campgrounds/new" class="btn btn-success"> &#43; New Campground </a>
+</div>
+<hr />
+<div class="container">
+  <% for(let i = campgrounds.length - 1; i>= 0; i--){ %> <% let campground =
+  campgrounds[i] %>
+  <div class="card shadow mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <% if (campground.images.length) {%>
+        <img
+          class="img-fluid p-1"
+          src="<%= campground.images[0].url %>"
+          alt=""
+        />
+        <%} else{%>
+        <img
+          class="img-fluid"
+          src="https://northeastohiofamilyfun.com/wp-content/uploads/2020/05/Campgrounds-in-Ohio.jpg"
+          alt=""
+        />
+        <%}%>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= campground.title %></h5>
+          <p class="card-text"><%= campground.description %></p>
+          <p class="card-text">
+            <small class="text-muted"><%= campground.location %> </small>
+            <br />
+            <small class="text-muted"
+              >Submitted by <%= campground.author.username %>
+            </small>
+          </p>
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"
+            >View <%= campground.title %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% } %>
+</div>
+<script>
+  const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
+  const campgrounds = {features: <%-JSON.stringify(campgrounds)%>};
+</script>
+<script src="javaScripts/clusterMap.js"></script>

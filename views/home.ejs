@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YelpCamp</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="https://res.cloudinary.com/dhpihshcf/image/upload/v1675575100/YelpCamp/logo_fdkvjj.svg"
+    />
+    <link rel="stylesheet" href="/styleSheets/home.css" />
+  </head>
+  <body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div class="">
+          <h3 class="float-md-left mb-0">YelpCamp</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-right">
+            <a href="#" class="nav-link active" aria-current="page">Home</a>
+            <a href="/campgrounds" class="nav-link">Campgrounds</a>
+            <% if(!currentUser){ %>
+            <a href="/login" class="nav-link">Login</a>
+            <a href="/register" class="nav-link">Register</a>
+            <% }else{ %>
+            <a href="/logout" class="nav-link">Logout</a>
+            <% } %>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <h1>YelpCamp</h1>
+        <p class="lead">
+          Welcome to YelpCamp!
+          <br />
+          Jump right in and explore our many campgrounds. <br />
+          Feel free to share some of your own and comment on others!
+        </p>
+        <div class="col-md-4 offset-md-4">
+          <a
+            href="/campgrounds"
+            class="btn btn-lg btn-secondary font-weight-bold bg-white btn-block"
+            >View Campgrounds</a
+          >
+        </div>
+      </main>
+      <footer class="mt-auto text-whtie-50">
+        <p>&copy; 2023 YelpCamp</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
